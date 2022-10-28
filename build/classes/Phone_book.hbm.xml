@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="kz.gnmlab4.hibernate">
+    <class name="Phone_book" table="table1">
+        <id name="id" column="id" unsaved-value="null">
+            <generator class="native"/>
+        </id>
+
+	<many-to-one name="userInfo" column="userInfoID" class="UserInfo" cascade="all"/>
+        <property name="Name_person" column="Name_person"/>
+        <property name="Surname" column="Surname"/>
+        <property name="MiddleName" column="MiddleName"/>
+        <property name="Address" column="Address"/>
+        <property name="Number" column="Number"/>
+    </class>
+</hibernate-mapping>
